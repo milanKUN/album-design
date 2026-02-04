@@ -1,30 +1,30 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Base folder of your project (IMPORTANT)
-    RewriteBase /albumdesignsecoond/
+    # ✅ Subdomain root: project is at /
+    RewriteBase /
 
-    # Redirect trailing slashes to avoid duplicate URLs
+    # Disable directory listing
+    Options -Indexes
+
+    # Redirect trailing slash (avoid duplicate URLs)
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.+)/$ $1 [L,R=301]
 
-    # Handle front controller (remove index.php from URL)
+    # Remove index.php from URL (CI Front Controller)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
 
-# Disable directory listing
-Options -Indexes
-
-# Allow larger uploads (optional — for image upload issues)
+# ---- Upload Limits (Hostinger may ignore php_value depending on PHP handler) ----
 php_value upload_max_filesize 64M
 php_value post_max_size 128M
 php_value memory_limit 256M
 php_value max_execution_time 300
 php_value max_input_time 300
 
-# Enable caching for faster loading (optional)
+# ---- Browser Cache ----
 <IfModule mod_expires.c>
     ExpiresActive On
 
@@ -39,7 +39,8 @@ php_value max_input_time 300
     # CSS & JS
     ExpiresByType text/css "access plus 1 week"
     ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType text/javascript "access plus 1 week"
 
-    # Cache HTML lightly
+    # HTML
     ExpiresByType text/html "access plus 1 hour"
 </IfModule>

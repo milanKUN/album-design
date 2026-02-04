@@ -76,14 +76,14 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'album',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'album',
 
 
-	// 'username' => 'u505572804_home',
-	// 'password' => '4Hfj?CLX~u7',
-	// 'database' => 'u505572804_home',
+	'username' => 'u502775450_album',
+	'password' => 'y5I8r+q@M^*L',
+	'database' => 'u502775450_album',
 
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
