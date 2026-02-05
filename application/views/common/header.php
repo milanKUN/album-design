@@ -112,7 +112,7 @@
                   </a>
                 </li>
                 <li class>
-                  <a href="<?= base_url();?>contact"> Contact Us </a>
+                  <a href="<?= base_url();?>contuct-us"> Contact Us </a>
                 </li>
               </ul>
             </div>

@@ -11,22 +11,17 @@
                     <div class="row">
                         <div class="col-md-8 col-sm-8">
                             <div class="call-to-action-left p-tb20 p-r50">
-                                <h4 class="text-uppercase m-b10">We
-                                    are ready to build your dream
-                                    tell us more about your
-                                    project</h4>
-                                <p>Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit.
-                                    Suspendisse viverra mauris eget
-                                    tortor.</p>
+                                <h4 class="text-uppercase m-b10">TURN YOUR MEMORIES INTO TIMELESS MASTERPIECES</h4>
+                                <p>From weddings to life’s special moments, we design and print premium photo books that
+                                    preserve your memories forever. Let’s start your journey today.</p>
                             </div>
                         </div>
 
                         <div class="col-md-3">
                             <div class="call-to-action-right p-tb30">
-                                <a href="contact-1.html"
+                                <a href="<?= base_url(); ?>contact-us"
                                     class="site-button-secondry text-uppercase radius-sm font-weight-600">
-                                    Contact us
+                                    Get in Touch
                                 </a>
                             </div>
                         </div>
@@ -68,15 +63,9 @@
                                 <!-- <img src="<?= base_url('uploads/settings/' . $settings['logo']); ?>" width="230" height="67" alt="<?= $settings['company_name']; ?> Logo"> -->
                             </a>
                         </div>
-                        <p>Thewebmax ipsum dolor sit amet, interior
-                            adipiscing elit, sed diam nonummy nibh
-                            is euismod tincidunt ut laoreet dolore
-                            are agna aliquam erat. wisi enim ad
-                            minim veniam, quis tation. sit amet,
-                            consectet. ipsum dolor sit amet,
-                            consectetuer and item adipiscing. ipsum
-                            dolor sit.
-                        </p>
+                        <p>Creative Photo Book is a trusted photo book and album maker in Kolkata, offering premium
+                            printing, vibrant colors, and durable finishing. We turn your memories into beautifully
+                            crafted albums that last a lifetime.</p>
                     </div>
                 </div>
                 <!-- RESENT POST -->
@@ -155,12 +144,10 @@
                     <div class="widget widget_services">
                         <h4 class="widget-title">Useful links</h4>
                         <ul>
-                            <li><a href="about-1.html">About</a></li>
-                            <li><a href="faq-1.html">FAQ</a></li>
-                            <li><a href="career.html">Career</a></li>
-                            <li><a href="our-team.html">Our Team</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="gallery-grid-1.html">Gallery</a></li>
+                            <li><a href="<?= base_url(); ?>about-us">About</a></li>
+                            <li><a href="<?= base_url(); ?>our-blog">Blog</a></li>
+                            <li><a href="<?= base_url(); ?>product">Album Cover</a></li>
+                            <li><a href="<?= base_url(); ?>">Project</a></li>
                         </ul>
                     </div>
                 </div>

@@ -61,10 +61,11 @@ class Home extends CI_Controller
 		$data['our_team'] = $this->Generalmodel->show_data_id('our_team', 'Active', 'status', 'get', '');
 
 		$data['about_banner'] = $this->Generalmodel->show_data_id('breadcome', 1, 'id', 'get', '');
+		$data['product'] = $this->Generalmodel->show_data_id('product', 'Active', 'status', 'get', '');
 
 
 
-		$data['cms1'] = $this->Generalmodel->show_data_id('cms', 1, 'id', 'get', '');
+		$data['cms7'] = $this->Generalmodel->show_data_id('cms', 7, 'id', 'get', '');
 		$data['cms2'] = $this->Generalmodel->show_data_id('cms', 2, 'id', 'get', '');
 		$data['cms3'] = $this->Generalmodel->show_data_id('cms', 3, 'id', 'get', '');
 		$data['cms4'] = $this->Generalmodel->show_data_id('cms', 4, 'id', 'get', '');
