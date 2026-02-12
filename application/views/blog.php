@@ -1,91 +1,93 @@
-<!-- Start Breadcarumb area  -->
-<div class="breadcrumb-area breadcarumb-style-1 ptb--120">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb-inner text-center">
-                    <h1 class="title theme-gradient h2">Blog Grid Style.</h1>
-                    <ul class="page-list">
-                        <li class="rainbow-breadcrumb-item"><a href="<?= base_url();?>">Home</a></li>
-                        <li class="rainbow-breadcrumb-item active">Blog Grid</li>
-                    </ul>
-                </div>
+<!-- CONTENT START -->
+<div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <div class="wt-bnr-inr overlay-wraper"
+        style="background-image:url(<?= base_url(); ?>uploads/breadcome/<?= $breadcome4[0]->image; ?>);">
+        <div class="overlay-main bg-black opacity-07"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <h1 class="text-white">Our Blog</h1>
             </div>
         </div>
     </div>
-</div>
-<!-- End Breadcarumb area  -->
-<!-- Start Theme Style  -->
-<div>
-    <div class="rainbow-gradient-circle"></div>
-    <div class="rainbow-gradient-circle theme-pink"></div>
-</div>
-<!-- End Theme Style  -->
+    <!-- INNER PAGE BANNER END -->
 
-
-
-<!-- Start Rn Blog Area  -->
-<div class="main-content">
-    <div class="rainbow-blog-area rainbow-section-gap">
+    <!-- BREADCRUMB ROW -->
+    <div class="bg-gray-light p-tb20">
         <div class="container">
-            <div class="row mt_dec--30">
-                <div class="col-lg-12">
+            <ul class="wt-breadcrumb breadcrumb-style-2">
+                <li><a href="<?= base_url(); ?>"><i class="fa fa-home"></i> Home</a></li>
+                <li>Our Blog</li>
+            </ul>
+        </div>
+    </div>
+    <!-- BREADCRUMB ROW END -->
 
-                    <div class="row row--15">
+    <!-- SECTION CONTENT START -->
+    <div class="section-full p-t80 p-b50">
+        <div class="container">
 
-                        <?php
-                        $c = 0;
-                        foreach ($blog as $bkey) {
-                            ?>
-                            <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt--30" data-sal="slide-up"
-                                data-sal-duration="700" data-sal-delay="<?= $c; ?>00">
+            <!-- COLUMNS 4 -->
+            <?php
+            if (!empty($blog)) {
+                foreach ($blog as $Bkey) {
+                    ?>
+                    <div class="blog-post blog-md date-style-1 clearfix">
+                        <div class="wt-post-media wt-img-effect zoom-slow">
+                            <a href="<?= base_url(); ?>blog-details/<?= $Bkey->blog_slug; ?>">
+                                <img src="<?= base_url(); ?>uploads/blog/<?= $Bkey->blog_image; ?>"
+                                    alt="<?= $Bkey->blog_title; ?>">
+                            </a>
+                        </div>
+                        <div class="wt-post-info">
 
-                                <div class="rainbow-card box-card-style-default">
-                                    <div class="inner">
+                            <div class="wt-post-title ">
+                                <h3 class="post-title">
+                                    <a href="<?= base_url(); ?>blog-details/<?= $Bkey->blog_slug; ?>">
+                                        <?= $Bkey->blog_title; ?>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="wt-post-meta ">
+                                <ul>
+                                    <li class="post-date">
+                                        <i class="fa fa-calendar"></i><?= date('d M y', strtotime($Bkey->date)); ?></span>
+                                    </li>
+                                    <li class="post-author">
+                                        <i class="fa fa-user"></i><a href="#">By <span><?= $Bkey->author; ?></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="wt-post-text">
+                                <p>
+                                    <?php
+                                    $text = strip_tags($Bkey->blog_details);
+                                    $words = explode(' ', $text);
+                                    echo implode(' ', array_slice($words, 0, 50));
 
-                                        <div class="thumbnail">
-                                            <a class="image" href="<?= base_url();?>blog-details/<?= $bkey->blog_slug; ?>/">
-                                                <img src="<?= base_url(); ?>uploads/blog/<?= $bkey->blog_image; ?>"
-                                                    alt="<?= $bkey->blog_title; ?> Image">
-                                            </a>
-                                        </div>
-
-                                        <div class="content">
-                                            <ul class="rainbow-meta-list">
-                                                <li><a href="#"><?= $bkey->author; ?></a></li>
-                                                <li class="separator">/</li>
-                                                <li><?= date("d M Y", strtotime($bkey->date)); ?></li>
-                                            </ul>
-
-                                            <h4 class="title">
-                                                <a href="<?= base_url();?>blog-details/<?= $bkey->blog_slug; ?>/">
-                                                    <?= $bkey->blog_title; ?>
-                                                </a>
-                                            </h4>
-
-                                        </div>
-                                    </div>
+                                    if (count($words) > 50) {
+                                        echo '...';
+                                    }
+                                    ?>
+                                </p>
+                            </div>
+                            <div class="clearfix">
+                                <div class="wt-post-readmore pull-left">
+                                    <a href="<?= base_url(); ?>blog-details/<?= $Bkey->blog_slug; ?>" title="READ MORE"
+                                        rel="bookmark" class="site-button-link">Read
+                                        More</a>
                                 </div>
                             </div>
-
-                            <?php
-                            $c++;   // FIXED
-                        }
-                        ?>
-
-
+                        </div>
                     </div>
+                <?php }
+            } ?>
+            <!-- BLOG POST END -->
 
-                </div>
-                <div class="col-lg-12 text-center">
-                    <div class="rainbow-load-more text-center mt--60">
-                        <a class="btn-default" href="blog-grid.html">View More Post
-                            <i class="feather-loader"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+    <!-- SECTION CONTENT END -->
+
 </div>
-<!-- End Rn Blog Area  -->
+<!-- CONTENT END -->

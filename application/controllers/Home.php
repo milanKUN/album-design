@@ -22,6 +22,8 @@ class Home extends CI_Controller
 		$data['client_review'] = $this->Generalmodel->show_data_id('client_review', 'Active', 'status', 'get', '');
 		$data['product'] = $this->Generalmodel->show_data_id('product', 'Active', 'status', 'get', '');
 		$data['gallery'] = $this->Generalmodel->show_data_id('gallery', 'Active', 'status', 'get', '');
+		$data['youtube_vedeo'] = $this->Generalmodel->show_data_id('youtube_vedeo', 'Active', 'status', 'get', '');
+
 
 
 
@@ -54,6 +56,8 @@ class Home extends CI_Controller
 	public function about()
 	{
 		$data['settings'] = $this->Generalmodel->show_data_id('settings', 1, 'id', 'get', '');
+		$data['breadcome1'] = $this->Generalmodel->show_data_id('breadcome', 1, 'id', 'get', '');
+
 		// $data['cms1'] = $this->Generalmodel->show_data_id('cms', 1, 'id', 'get', '');
 
 		$data['review'] = $this->Generalmodel->show_data_id('client_review', 'Active', 'status', 'get', '');
@@ -83,9 +87,28 @@ class Home extends CI_Controller
 		$this->load->view('common/footer');
 	}
 
+	public function project()
+	{
+		$data['settings'] = $this->Generalmodel->show_data_id('settings', 1, 'id', 'get', '');
+		$data['breadcome3'] = $this->Generalmodel->show_data_id('breadcome', 3, 'id', 'get', '');
+
+
+		$data['gallery'] = $this->Generalmodel->show_data_id('gallery', 'Active', 'status', 'get', '');
+
+
+		$data['title'] = "Project";
+ 
+
+		$this->load->view('common/header', $data);
+		$this->load->view('project');
+		$this->load->view('common/footer');
+	}
+
 	public function product()
 	{
 		$data['settings'] = $this->Generalmodel->show_data_id('settings', 1, 'id', 'get', '');
+		$data['breadcome2'] = $this->Generalmodel->show_data_id('breadcome', 2, 'id', 'get', '');
+
 
 		$data['product'] = $this->Generalmodel->show_data_id('product', 'Active', 'status', 'get', '');
 		$data['cms2'] = $this->Generalmodel->show_data_id('cms', 2, 'id', 'get', '');
@@ -103,6 +126,7 @@ class Home extends CI_Controller
 	public function product_details()
 	{
 		$data['settings'] = $this->Generalmodel->show_data_id('settings', 1, 'id', 'get', '');
+		$data['breadcome5'] = $this->Generalmodel->show_data_id('breadcome', 5, 'id', 'get', '');
 
 
 
@@ -119,37 +143,11 @@ class Home extends CI_Controller
 	}
 
 
-	public function gallery($last_id = 0)
-	{
-		$data['settings'] = $this->Generalmodel->show_data_id('settings', 1, 'id', 'get', '');
-
-		$data['cms2'] = $this->Generalmodel->show_data_id('cms', 2, 'id', 'get', '');
-
-
-		// Load 10 images at a time
-		$limit = 10;
-
-		$this->db->order_by('id', 'DESC');
-		if ($last_id) {
-			$this->db->where('id <', $last_id); // older images
-		}
-		$this->db->limit($limit);
-		$query = $this->db->get('gallery');
-		$data['images'] = $query->result();
-
-		// Pass last image ID to view
-		$data['last_id'] = !empty($data['images']) ? end($data['images'])->id : 0;
-
-		$data['title'] = "Gallery";
-
-		$this->load->view('common/header', $data);
-		$this->load->view('gallery', $data);
-		$this->load->view('common/footer');
-	}
-
 	public function blog()
 	{
 		$data['settings'] = $this->Generalmodel->show_data_id('settings', 1, 'id', 'get', '');
+		$data['breadcome4'] = $this->Generalmodel->show_data_id('breadcome', 4, 'id', 'get', '');
+
 
 		$data['blog'] = $this->Generalmodel->show_data_id('blog', 'Active', 'status', 'get', '');
 
@@ -167,6 +165,8 @@ class Home extends CI_Controller
 	public function blog_details()
 	{
 		$data['settings'] = $this->Generalmodel->show_data_id('settings', 1, 'id', 'get', '');
+		$data['breadcome6'] = $this->Generalmodel->show_data_id('breadcome', 6, 'id', 'get', '');
+
 
 		$last_segment = $this->uri->segment($this->uri->total_segments());
 

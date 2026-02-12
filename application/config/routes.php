@@ -53,20 +53,23 @@ $route['default_controller'] = 'Home/index';
 
 $route['about-us'] = 'Home/about/'; 
 
-$route['portfolio'] = 'Home/portfolio/'; 
-$route['portfolio-details/(:any)'] = 'Home/portfolio_details/$1'; 
+$route['project'] = 'Home/project/'; 
+// $route['portfolio-details/(:any)'] = 'Home/portfolio_details/$1'; 
 
 $route['product'] = 'Home/product/'; 
 $route['product-details/(:any)'] = 'Home/product_details/$1'; 
 
 $route['our-blog'] = 'Home/blog/';    
-$route['blog-details/(:any)'] = 'Home/blog_details/$1';
+$route['blog-details/(:any)'] = 'Home/blog_details/$1'; 
 
 $route['contuct-us'] = 'Home/contuct_us/'; 
   
 $route['my-gallery'] = 'Home/gallery/';   
 
 $route['contact/save_message'] = 'contact/save_message';
+
+$route['contact-submit'] = 'ContactController/submit_contact';
+$route['save-enquiry'] = 'ProductController/save_enquiry';
 
 
 

@@ -66,7 +66,7 @@
           </div>
           <div class="header-info">
             <ul>
-              <li>
+              <li> 
                 <div>
                   <div class="icon-sm">
                     <span class="icon-cell  site-text-primary"><i class="flaticon-placeholder"></i></span>
@@ -112,7 +112,10 @@
                   </a>
                 </li>
                 <li class>
-                  <a href="<?= base_url();?>contuct-us"> Contact Us </a>
+                  <a href="<?= base_url();?>project"> Project </a>
+                </li>
+                 <li class>
+                  <a href="<?= base_url();?>our-blog"> Blog </a>
                 </li>
               </ul>
             </div>
@@ -128,7 +131,7 @@
             <!-- ETRA Nav -->
             <div class="extra-nav">
               <div class="extra-cell">
-                <a class="site-button text-uppercase radius-sm font-weight-700">Login/Signup</a>
+                <a href="<?= base_url();?>contuct-us" class="site-button text-uppercase radius-sm font-weight-700"> Contact Us</a>
               </div>
             </div>
 

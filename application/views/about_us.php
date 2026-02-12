@@ -3,7 +3,7 @@
 
 	<!-- INNER PAGE BANNER -->
 	<div class="wt-bnr-inr overlay-wraper"
-		style="background-image:url(<?= base_url(); ?>userpanel/assets/images/banner/about-banner.jpg);">
+		style="background-image:url(<?= base_url(); ?>uploads/breadcome/<?= $breadcome1[0]->image; ?>);">
 		<div class="overlay-main bg-black opacity-07"></div>
 		<div class="container">
 			<div class="wt-bnr-inr-entry">

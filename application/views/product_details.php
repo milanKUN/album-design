@@ -3,7 +3,7 @@
 
     <!-- INNER PAGE BANNER -->
     <div class="wt-bnr-inr overlay-wraper"
-        style="background-image:url(<?= base_url(); ?>userpanel/assets/images/banner/product-banner.jpg);">
+        style="background-image:url(<?= base_url(); ?>uploads/breadcome/<?= $breadcome5[0]->image; ?>);">
         <div class="overlay-main bg-black opacity-07"></div>
         <div class="container">
             <div class="wt-bnr-inr-entry">
@@ -114,35 +114,38 @@
                         <div class="tab-content">
                             <div id="web-design-19" class="tab-pane active">
                                 <div class=" p-a10">
-                                    <?= $product_details[0]->more_details;?>
+                                    <?= $product_details[0]->more_details; ?>
                                 </div>
                             </div>
                             <div id="developement-19" class="tab-pane">
                                 <div class=" p-a10">
-                                    
+
                                     <div id="review_form_wrapper">
                                         <div id="review_form">
                                             <div id="respond" class="comment-respond">
                                                 <h3 class="comment-reply-title" id="reply-title">Add a review</h3>
                                                 <form class="comment-form" method="post">
+                                                    <input type="hidden" name="product_title"
+                                                        value="<?= $product_details[0]->title ?>">
+                                                    <input type="hidden" name="product_id"
+                                                        value="<?= $product_details[0]->id ?>">
                                                     <div class="comment-form-author">
                                                         <label>Name <span class="required">*</span></label>
-                                                        <input type="text" aria-required="true" size="30" value=""  name="author" id="author">
+                                                        <input type="text" aria-required="true" size="30" value=""
+                                                            name="author" id="author">
                                                     </div>
                                                     <div class="comment-form-email">
                                                         <label>Phone <span class="required">*</span></label>
-                                                        <input type="text" aria-required="true" size="30" value="" name="Phone" id="Phone">
-                                                    </div>
-                                                    <div class="comment-form-email">
-                                                        <label>Address <span class="required">*</span></label>
-                                                        <input type="text" aria-required="true" size="30" value="" name="Address" id="Address">
-                                                    </div>
-                                                     <div class="comment-form-email">
-                                                        <label>Email</label>
-                                                        <input type="text" aria-required="true" size="30" value="" name="email" id="email">
+                                                        <input type="text" aria-required="true" size="30" value=""
+                                                            name="Phone" id="Phone">
                                                     </div>
                                                     <div class="comment-form-comment">
-                                                        <label>Your Review</label>
+                                                        <label>Address <span class="required">*</span></label>
+                                                        <input type="text" aria-required="true" size="30" value=""
+                                                            name="Address" id="Address">
+                                                    </div>
+                                                    <div class="comment-form-comment">
+                                                        <label>Your Massage</label>
                                                         <textarea aria-required="true" rows="8" cols="45" name="comment"
                                                             id="comment"></textarea>
                                                     </div>

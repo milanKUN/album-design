@@ -5,7 +5,7 @@
     <div class="bg-gray-light p-tb20">
         <div class="container">
             <ul class="wt-breadcrumb breadcrumb-style-2">
-                <li><a href="javascript:void(0);"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="<?= base_url(); ?>"><i class="fa fa-home"></i> Home</a></li>
                 <li>Contact 3</li>
             </ul>
         </div>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="gmap-outline m-b30">
                             <div id="gmap_canvas" class="google-map">
-                                <?= $settings[0]->map;?>
+                                <?= $settings[0]->map; ?>
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
 
-                        <form class="cons-contact-form p-a30 bg-gray" method="post">
+                        <form class="cons-contact-form p-a30 bg-gray" method="post" action="javascript:void(0);">
 
                             <div class="row">
 
@@ -69,16 +69,25 @@
                                                 placeholder="Email">
                                         </div>
                                     </div>
-
                                 </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-book"></i></span>
+                                            <input name="phone" type="text" class="form-control" required
+                                                placeholder="Phone">
+                                        </div>
+                                    </div>
+                                </div>
+
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <span class="input-group-addon v-align-m"><i
-                                                    class="fa fa-pencil"></i></span>
-                                            <textarea name="message" rows="4" class="form-control " required
-                                                placeholder="Message"></textarea>
+                                            <span class="input-group-addon v-align-m">
+                                                <i class="fa fa-pencil"></i>
+                                            </span>
+                                            <textarea name="message" rows="4" class="form-control " required placeholder="Message"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +128,7 @@
                                             class="icon-cell text-white"><i class="fa fa-phone"></i></span></div>
                                     <div class="icon-content">
                                         <h5>Phone</h5>
-                                        <p><?= $settings[0]->phone;?></p>
+                                        <p><?= $settings[0]->phone; ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +138,7 @@
                                             class="icon-cell text-white"><i class="fa fa-envelope"></i></span></div>
                                     <div class="icon-content">
                                         <h6>Email</h6>
-                                        <p><?= $settings[0]->email;?></p>
+                                        <p><?= $settings[0]->email; ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +148,7 @@
                                             class="icon-cell text-white"><i class="fa fa-map-marker"></i></span></div>
                                     <div class="icon-content">
                                         <h5>Address</h5>
-                                        <p><?= strip_tags($settings[0]->address);?></p>
+                                        <p><?= strip_tags($settings[0]->address); ?></p>
                                     </div>
                                 </div>
                             </div>

@@ -181,6 +181,17 @@ if (!$this->session->userdata('user_email')) {
 						</div>
 					</a>
 				</li>
+
+				<li class="<?php if ($lasturl == "Youtube") {
+								echo "active";
+							} ?>">
+					<a href="<?= site_url('admin/Youtube'); ?>">
+						<div class="menu-item">
+							<i class="fa-solid fa-arrows-to-circle"></i>
+							<span class="menu-text">Youtube Video</span>
+						</div>
+					</a>
+				</li>
 				
 
 				

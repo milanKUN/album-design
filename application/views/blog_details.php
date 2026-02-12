@@ -1,40 +1,63 @@
- <!-- Start Advance Pricing Area  -->
-        <div class="rainbow-blog-details-area">
-            <div class="post-page-banner rainbow-section-gapTop">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 offset-lg-2">
-                            <div class="content text-center">
-                                <div class="page-title">
-                                    <h1 class="theme-gradient"><?= $blog_details[0]->blog_title; ?></h1>
-                                </div>
-                                <ul class="rainbow-meta-list">
-                                    <li>
-                                        <i class="feather-user"></i>
-                                        <a href="#"><?= $blog_details[0]->author; ?></a>
-                                    </li>
-                                    <li>
-                                        <i class="feather-calendar"></i>
-                                        <?= date("d M Y", strtotime($blog_details[0]->date)); ?>
-                                    </li>
-                                </ul>
-                                <div class="thumbnail alignwide mt--60"><img class="w-100 radius" src="<?= base_url();?>uploads/blog/<?= $blog_details[0]->blog_image; ?>" alt="<?= $blog_details[0]->blog_title; ?>"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-details-content pt--60 rainbow-section-gapBottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 offset-lg-2">
-                            <div class="content">
+<!-- CONTENT START -->
+<div class="page-content">
 
-                                <?= $blog_details[0]->blog_details; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- INNER PAGE BANNER -->
+    <div class="wt-bnr-inr overlay-wraper"
+        style="background-image:url(<?= base_url(); ?>uploads/breadcome/<?= $breadcome6[0]->image; ?>);">
+        <div class="overlay-main bg-black opacity-07"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <h1 class="text-white"><?= $blog_details[0]->blog_title; ?></h1>
             </div>
         </div>
-        <!-- End Advance Pricing Area  -->
+    </div>
+    <!-- INNER PAGE BANNER END -->
+
+    <!-- BREADCRUMB ROW -->
+    <div class="bg-gray-light p-tb20">
+        <div class="container">
+            <ul class="wt-breadcrumb breadcrumb-style-2">
+                <li><a href="<?= base_url(); ?>"><i class="fa fa-home"></i> Home</a></li>
+                <li>Blog Details</li>
+            </ul>
+        </div>
+    </div>
+    <!-- BREADCRUMB ROW END -->
+
+    <!-- SECTION CONTENT START -->
+    <div class="section-full p-t80 p-b50">
+        <div class="container">
+            <div class="wt-mid-page">
+
+                <!-- BLOG START -->
+                <div class="blog-post date-style-1 blog-post-single">
+                    <div class="wt-post-media wt-img-effect">
+                        <img src="<?= base_url(); ?>uploads/blog/<?= $blog_details[0]->blog_image; ?>"
+                            alt="<?= $blog_details[0]->blog_title; ?>">
+                    </div>
+                    <div class="post-description-area p-t30">
+                        <div class="wt-post-title ">
+                            <h3 class="post-title"><?= $blog_details[0]->blog_title; ?></h3>
+                        </div>
+                        <div class="wt-post-meta ">
+                            <ul>
+                                <li class="post-date">
+                                    <i class="fa fa-calendar"></i><?= date('d M y', strtotime($blog_details[0]->date)); ?>
+                                </li>
+                                <li class="post-author"><i class="fa fa-user"></i>By
+                                    <span><?= $blog_details[0]->author; ?></span></li>
+                            </ul>
+                        </div>
+                        <div class="wt-post-text">
+                            <?= $blog_details[0]->blog_details; ?>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- CONTENT END -->

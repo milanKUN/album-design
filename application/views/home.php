@@ -630,9 +630,7 @@
                 </span>
                 <div class="icon-content">
                   <h4 class="m-b5">Address</h4>
-                  <span class="font-12">295
-                    Madison Ave, 12th Floor New
-                    York, NY 10017</span>
+                  <span class="font-12"><?= strip_tags($settings[0]->address); ?></span>
                 </div>
               </div>
 
@@ -642,10 +640,7 @@
                 </span>
                 <div class="icon-content">
                   <h4 class="m-b5">Email</h4>
-                  <span class="font-12">info
-                    @example.com </span><br>
-                  <span class="font-12">info2
-                    @example.com </span>
+                  <span class="font-12"><?= $settings[0]->email; ?></span>
                 </div>
               </div>
 
@@ -655,10 +650,7 @@
                 </span>
                 <div class="icon-content">
                   <h4 class="m-b5">Phone</h4>
-                  <span class="font-12">+77 634
-                    545 144 </span><br>
-                  <span class="font-12">+77 634
-                    255 147 </span>
+                  <span class="font-12">+<?= $settings[0]->phone; ?> </span>
                 </div>
               </div>
 
@@ -680,9 +672,9 @@
         <div class="col-lg-8 col-md-6">
           <div class="section-content bg-gray">
             <div class="contact-home-right p-a30">
-              <h5 class="text-uppercase font-26 p-b20 font-weight-400">GET
-                IN TOUCH</h5>
-              <form class="cons-contact-form2" method="post" action="https://thewebmax.org/spa/form-handler2.php">
+              <h5 class="text-uppercase font-26 p-b20 font-weight-400">GET IN TOUCH</h5>
+
+                <form class="cons-contact-form" method="post" action="javascript:void(0);">
                 <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -721,145 +713,126 @@
   </div>
   <!-- CONTACT US OFFER SECTION END  -->
 
-  <!-- OUR CLIENT SLIDER START -->
-  <div class="section-full p-t100 p-b70 bg-repeat"
-    style="background-image:url(<?= base_url(); ?>userpanel/assets/images/background/bg-6.jpg);">
-    <div class="container">
+  
 
-      <div class="section-head text-center">
-        <h1><span class="site-text-primary"> Our</span>
-          Client</h1>
-        <div class="wt-separator-outer ">
-          <div class="wt-separator style-icon">
-            <i class="fa fa-leaf text-black"></i>
-            <span class="separator-left site-bg-primary"></span>
-            <span class="separator-right site-bg-primary"></span>
+  <div class="youtube_design_milan_wrap">
+
+    <div class="youtube_design_milan_carousel">
+      <button class="youtube_design_milan_arrow youtube_design_milan_arrow_left" type="button" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M14.5 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div class="youtube_design_milan_track" id="youtube_design_milan_track">
+        <!-- ✅ Use data-youtube-url OR data-youtube-id -->
+
+        <?php  if(!empty($youtube_vedeo)) {
+          foreach($youtube_vedeo as $yrow) { ?>
+        <article class="youtube_design_milan_card">
+          <div class="youtube_design_milan_thumb" data-youtube-url="<?= $yrow->youtube_link; ?>"
+            data-title="<?= $yrow->title; ?>">
+            <img src="<?= base_url(); ?>uploads/youtube_vedeo/<?= $yrow->image; ?>" alt="<?= $yrow->title; ?>">
+            <div class="youtube_design_milan_play">
+              <div class="youtube_design_milan_play_btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M10 8.5v7l6-3.5-6-3.5z" fill="currentColor" />
+                </svg>
+              </div>
+            </div>
           </div>
-        </div>
-        <p>Lorem Ipsum is simply dummy text of the printing
-          and typesetting industry. Lorem Ipsum has been
-          the industry's standard dummy text ever since
-          the 1500s.</p>
+
+          <div class="youtube_design_milan_meta">
+            <div class="youtube_design_milan_row1">
+              <span class="youtube_design_milan_youtube_badge">
+                <svg class="youtube_design_milan_youtube_icon" viewBox="0 0 24 24" fill="none">
+                  <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.8 4.6 12 4.6 12 4.6s-5.8 0-7.5.5A3 3 0 0 0 2.4 7.2 31.7 31.7 0 0 0 2 12a31.7 31.7 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.7.5 7.5.5 7.5.5s5.8 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 22 12a31.7 31.7 0 0 0-.4-4.8z"
+                    fill="#FF0000" />
+                  <path d="M10.2 15.5v-7l6.2 3.5-6.2 3.5z" fill="#fff" />
+                </svg>
+                <?= $yrow->subtitle; ?>
+              </span>
+            </div>
+
+            <h3 class="youtube_design_milan_title"><?= $yrow->title; ?></h3>
+            <p class="youtube_design_milan_subtitle"><?= $yrow->subtitle; ?></p>
+
+            <div class="youtube_design_milan_stats">
+              <div class="youtube_design_milan_pills">
+                <span class="youtube_design_milan_pill">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 21s-7-4.6-9.2-9A5.5 5.5 0 0 1 12 6.6 5.5 5.5 0 0 1 21.2 12C19 16.4 12 21 12 21z"
+                      stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                  </svg>
+                 <?= $yrow->like_youtube; ?>
+                </span>
+                <span class="youtube_design_milan_pill">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="2" />
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                  </svg>
+                  <?= $yrow->view; ?>
+                </span>
+              </div>
+
+              <span class="youtube_design_milan_date">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M7 3v3M17 3v3M4 8h16M6 11h4M6 15h4M14 11h4M14 15h4M5 5h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+               <?= date('d M y', strtotime($yrow->date)); ?>
+              </span>
+            </div>
+          </div>
+        </article>
+        <?php } } ?>
+
+
       </div>
 
-      <div class="section-content">
-        <div class="owl-carousel client-logo-carousel m-b30">
-
-          <!-- COLUMNS 1 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo1.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-          <!-- COLUMNS 2 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo2.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-          <!-- COLUMNS 3 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo3.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-          <!-- COLUMNS 4 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo4.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-          <!-- COLUMNS 5 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo5.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-          <!-- COLUMNS 6 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo6.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-          <!-- COLUMNS 7 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo7.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-          <!-- COLUMNS 8 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo8.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-          <!-- COLUMNS 9 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo9.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-          <!-- COLUMNS 10 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo10.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-          <!-- COLUMNS 11 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo11.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-          <!-- COLUMNS 12 -->
-          <div class="item">
-            <div class="ow-client-logo">
-              <div class="client-logo wt-img-effect on-color">
-                <a href="<?= base_url();?>"><img src="<?= base_url(); ?>userpanel/assets/images/client-logo/logo12.png"
-                    alt></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- IMAGE CAROUSEL START -->
+      <button class="youtube_design_milan_arrow youtube_design_milan_arrow_right" type="button" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M9.5 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
     </div>
   </div>
-  <!-- OUR CLIENT SLIDER END -->
+
+  <!-- MODAL -->
+  <div class="youtube_design_milan_modal" id="youtube_design_milan_modal" aria-hidden="true">
+    <div class="youtube_design_milan_modal_box" role="dialog" aria-modal="true" aria-label="YouTube player">
+      <div class="youtube_design_milan_modal_topbar">
+        <div class="youtube_design_milan_modal_title" id="youtube_design_milan_modal_title">
+          <span class="youtube_design_milan_modal_logo" aria-hidden="true">◆</span>
+          <span>VIDEO TITLE</span>
+        </div>
+
+        <div class="youtube_design_milan_modal_actions">
+          <button class="youtube_design_milan_btn" id="youtube_design_milan_copy" type="button" title="Copy link">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M9 9h10v10H9V9z" stroke="currentColor" stroke-width="2" />
+              <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" stroke="currentColor"
+                stroke-width="2" />
+            </svg>
+            Copy link
+          </button>
+
+          <button class="youtube_design_milan_btn youtube_design_milan_close" id="youtube_design_milan_close"
+            type="button" aria-label="Close">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <div class="youtube_design_milan_player">
+        <iframe class="youtube_design_milan_iframe" id="youtube_design_milan_iframe" allow="autoplay; encrypted-media"
+          allowfullscreen title="YouTube video player"></iframe>
+      </div>
+    </div>
+  </div>
 
 </div>
 <!-- CONTENT END -->

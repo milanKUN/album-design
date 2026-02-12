@@ -34,7 +34,7 @@ $(function() {
         $("#field-blog_slug").val(str);
     });
 });
-</script>
+</script>  
 <script type="text/javascript">
 $(function() {
     $("#field-title").on("input", function() {
